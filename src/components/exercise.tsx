@@ -45,7 +45,7 @@ export function Exercise({
         <div className="relative h-full whitespace-pre text-wrap">
           <MainNav />
 
-          <div className="py-4 px-2">
+          <div className="py-4 px-2 mb-16 overflow-x-scroll">
             <h1 className="text-lg mb-4 font-semibold">{title}</h1>
             <Markdown>{contentMd}</Markdown>
           </div>

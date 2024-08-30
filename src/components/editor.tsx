@@ -5,7 +5,6 @@ import { linter, Diagnostic } from "@codemirror/lint";
 
 import CodeMirror, { ReactCodeMirrorProps } from "@uiw/react-codemirror";
 import { cn } from "@/lib/utils";
-import { HTMLProps } from "react";
 import { WasmParserError } from "@reciperium/recipe-parser-wasm";
 
 const recipriumTheme = createTheme({
@@ -16,7 +15,6 @@ const recipriumTheme = createTheme({
   },
   styles: [],
 });
-
 
 type Props = ReactCodeMirrorProps & {
   error?: WasmParserError | null;
@@ -56,7 +54,11 @@ export default function Editor({ error, recipe, onChange, className }: Props) {
           return diagnostics;
         }),
       ]}
-      className={cn(className, "dark:bg-slate-950 dark:selection:text-slate-900 caret-pink-500", error?.message && "err")}
+      className={cn(
+        className,
+        "dark:bg-slate-950 dark:selection:text-slate-900 caret-pink-500",
+        error?.message && "err"
+      )}
     />
   );
 }
