@@ -1,3 +1,10 @@
+## v0.2.1 (2024-08-30)
+
+### Fix
+
+- use auto overflow
+- use Link in footer
+
 ## v0.2.0 (2024-08-30)
 
 ### Feat
