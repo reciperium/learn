@@ -1,12 +1,15 @@
 import { Recipe } from "@reciperium/recipe-parser-wasm";
 import { ShareButton } from "./share";
-import { Instructions } from "@reciperium/react-recipe";
+import { Instructions, RecipeRef } from "@reciperium/react-recipe";
 import { Badge } from "./ui/badge";
+
+const BASE_URL = "https://reciperium.com";
 
 export type RecipeProps = {
   parsedRecipe: Recipe;
   rawRecipe: string;
 };
+
 export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
   const tags =
     parsedRecipe.metadata
@@ -38,10 +41,10 @@ export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
 
               {parsedRecipe.recipes_refs.map((ref) => (
                 <li key={ref.name} className="mb-2 text-left antialiased">
-                  {/* <span>
-                              {ref.quantity} {ref.unit}
-                            </span>{" "}
-                            <RecipeRef link={ref.name} /> */}
+                  <span>
+                    {ref.quantity} {ref.unit}
+                  </span>{" "}
+                  <RecipeRef baseUrl={BASE_URL} path={ref.name}>{ref.name}</RecipeRef>
                 </li>
               ))}
             </ul>
@@ -63,7 +66,7 @@ export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
       {parsedRecipe.tokens?.length > 0 && (
         <div className="recipe-content whitespace-pre text-wrap">
           <h2 className="text-lg font-semibold mb-2 ">Instructions</h2>
-          <Instructions tokens={parsedRecipe.tokens} />
+          <Instructions tokens={parsedRecipe.tokens} baseUrl={BASE_URL}/>
         </div>
       )}
       <div className="flex flex-wrap gap-2 pt-12">

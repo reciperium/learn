@@ -6,6 +6,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './node_modules/@reciperium/**/*.{ts,tsx,js,jsx}',
   ],
   prefix: "",
   theme: {
@@ -51,6 +52,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        link: {
+          DEFAULT: "hsl(var(--link))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,6 +74,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      link: {
+        DEFAULT: "hsl(var(--link))",
       },
     },
   },
