@@ -17,7 +17,15 @@ function ind(strings: TemplateStringsArray) {
     .join("");
 }
 
-const exercises = [
+type ExerciseType = {
+  contentMd: string;
+  validation: (recipe: Recipe) => boolean;
+  defaultRecipe: string;
+  title: string;
+  alias?: string[];
+};
+
+const exercises: ExerciseType[] = [
   {
     contentMd: ind`This interactive tutorial will guide you through creating your own recipes using a simple and intuitive language.
 
@@ -76,10 +84,11 @@ const exercises = [
     defaultRecipe: ind`Mix {flour} with {water}.
       Cook in a pan.
     `,
-    title: "Adding Amounts and Quantities",
+    title: "Adding Quantity and Units",
+    alias: ["quantity-and-units"],
   },
   {
-    contentMd: ind`Great job adding amounts and quantities!
+    contentMd: ind`Great job adding quantity and units!
 
     Now let's introduce materials. Materials are the tools or equipment needed for your recipe.
 
@@ -87,10 +96,12 @@ const exercises = [
 
     Add a material: Use the ampersand symbol (\`&\`) followed by curly braces to define a material: \`&{}\`.
 
-    **Example**
+    **Examples**
 
     \`\`\`
     &{pan}
+    &{blender}
+    &{proofing basket}
     \`\`\`
     `,
     validation: (recipe: Recipe) => {
@@ -126,6 +137,37 @@ const exercises = [
       Cook in a pan.
     `,
     title: "Adding Recipe References",
+  },
+  {
+    contentMd: ind`Now let's add tags to your recipe. Tags are keywords that help categorize your recipe.
+
+    **Task**
+
+    Add tags: At the beginning of the recipe, add \`>>\` followed by \`tags: \` and a space and a comma-separated list of tags.
+
+    **Example**
+
+    \`\`\`
+    >> tags: breakfast, vegan, gluten-free
+    \`\`\`
+
+    **Remember**: Tags should be descriptive and relevant to your recipe's content.
+
+    **Hint**: What are some possible tags for a pancake recipe? Consider the ingredients, dietary restrictions, or cooking methods
+    `,
+    validation: (recipe: Recipe) => {
+      console.log(recipe);
+      const tags =
+        recipe.metadata
+          ?.get("tags")
+          ?.split(",")
+          .filter((v) => !!v) || [];
+      return tags.length > 0;
+    },
+    title: "Adding Tags",
+    defaultRecipe: ind`Mix {flour}(125 gr) with @{woile/oat-milk}.
+    Cook in a pan.
+    `,
   },
 ];
 
