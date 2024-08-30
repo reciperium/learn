@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { HTMLProps } from "react";
 import { buttonVariants } from "./ui/button";
 import { maxExercises } from "@/tasks";
+import { Link } from "wouter";
 
 export type Props = React.PropsWithChildren &
   HTMLProps<HTMLElement> & { exerciseId: number };
@@ -16,22 +17,22 @@ export function Footer({ className, exerciseId }: Props): React.ReactNode {
     >
       <span>
         {exerciseId > 1 && (
-          <a
+          <Link
             href={`/${exerciseId - 1}`}
             className={buttonVariants({ variant: "default" })}
           >
             Previous
-          </a>
+          </Link>
         )}
       </span>
       <span>
         {maxExercises !== exerciseId && (
-          <a
+          <Link
             href={`/${exerciseId + 1}`}
             className={buttonVariants({ variant: "default" })}
           >
             Next
-          </a>
+          </Link>
         )}
       </span>
     </nav>
