@@ -56,7 +56,7 @@ export default function Editor({ error, recipe, onChange, className }: Props) {
       ]}
       className={cn(
         className,
-        "dark:bg-slate-950 dark:selection:text-slate-900 caret-pink-500",
+        "dark:bg-slate-950 dark:selection:text-slate-900 caret-pink-500 text text-sm",
         error?.message && "err"
       )}
     />

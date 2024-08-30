@@ -180,7 +180,6 @@ const exercises: ExerciseType[] = [
     **Hint**: What are some possible tags for a pancake recipe? Consider the ingredients, dietary restrictions, or cooking methods
     `,
     validation: (recipe: Recipe) => {
-      console.log(recipe);
       const tags =
         recipe.metadata
           ?.get("tags")

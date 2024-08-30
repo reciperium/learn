@@ -3,6 +3,7 @@ import { HTMLProps } from "react";
 import { buttonVariants } from "./ui/button";
 import { maxExercises } from "@/tasks";
 import { Link } from "wouter";
+import React from "react";
 
 export type Props = React.PropsWithChildren &
   HTMLProps<HTMLElement> & { exerciseId: number };
