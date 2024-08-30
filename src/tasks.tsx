@@ -113,6 +113,30 @@ const exercises: ExerciseType[] = [
     title: "Adding Materials",
   },
   {
+    title: "Adding timers",
+    contentMd: ind`Now let's add timers to your recipe.
+    Timers are used to indicate the time needed for a specific step in your recipe.
+
+    **Task**
+
+    Add a timer: Add the letter \`t\` followed by curly braces to define a timer: \`t{}\`.
+
+    **Example**
+
+    \`\`\`
+    t{1 minute}
+    \`\`\`
+
+    **Remember**: Timers are used to indicate the time needed for a specific step in your recipe.
+    `,
+    validation: (recipe: Recipe) => {
+      return recipe.timers.length > 0;
+    },
+    defaultRecipe: ind`Mix {flour}(125 gr) with {water}(300 ml).
+      Cook in a &{pan} for 1 minute.
+    `,
+  },
+  {
     contentMd: ind`Well done adding materials!
 
     Now let's add a recipe reference. Recipe references are links to other recipes that you can use in your recipe.
