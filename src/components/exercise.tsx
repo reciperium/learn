@@ -60,13 +60,16 @@ export function Exercise({
           />
         </div>
       </div>
-      <div>
-        <div className="h-1/3 border-b">
-          <div className="flex flex-col h-full items-center justify-center p-6">
+      <div className="flex flex-col-reverse md:flex-col">
+        <div className="h-1/2 md:h-1/3 min-h-64 border-b bg-cyan-50 dark:bg-cyan-800">
+          <div className="flex flex-col h-full items-center justify-center p-6 pt-0">
+            <span className="text-sm py-1 text-secondary-foreground">
+              editor
+            </span>
             <Suspense>
               <Editor
                 error={error}
-                className="w-full h-full font-sans border rounded-sm"
+                className="w-full h-full font-sans border rounded-sm bg-background"
                 recipe={recipe}
                 onChange={(value: string) => {
                   setCurrentRecipe(value);
