@@ -22,7 +22,7 @@ type Props = ReactCodeMirrorProps & {
   onChange: (value: string) => void;
 };
 
-export default function Editor({ error, recipe, onChange, className }: Props) {
+export default function Editor({ error, recipe, onChange, className, ...props }: Props) {
   return (
     <CodeMirror
       value={recipe}
@@ -59,6 +59,7 @@ export default function Editor({ error, recipe, onChange, className }: Props) {
         "dark:bg-slate-950 dark:selection:text-slate-900 caret-pink-500 text text-sm",
         error?.message && "err"
       )}
+      {...props}
     />
   );
 }

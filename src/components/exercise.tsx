@@ -1,5 +1,5 @@
 import { parse, Recipe, WasmParserError } from "@reciperium/recipe-parser-wasm";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 import { CircleCheckBig, CirclePlus } from "lucide-react";
@@ -27,6 +27,11 @@ export function Exercise({
   const [recipe, setCurrentRecipe] = useState(defaultRecipe);
   const [parsedRecipe, setParsedRecipe] = useState({} as Recipe);
   const [error, setError] = useState({} as WasmParserError | null);
+
+  useEffect(() => {
+    setCurrentRecipe(defaultRecipe);
+  }, [defaultRecipe]);
+
   useEffect(() => {
     try {
       const parsed: Recipe = parse(recipe);
@@ -58,14 +63,16 @@ export function Exercise({
       <div>
         <div className="h-1/3 border-b">
           <div className="flex flex-col h-full items-center justify-center p-6">
-            <Editor
-              error={error}
-              className="w-full h-full font-sans border rounded-sm"
-              recipe={recipe}
-              onChange={(value: string) => {
-                setCurrentRecipe(value);
-              }}
-            />
+            <Suspense>
+              <Editor
+                error={error}
+                className="w-full h-full font-sans border rounded-sm"
+                recipe={recipe}
+                onChange={(value: string) => {
+                  setCurrentRecipe(value);
+                }}
+              />
+            </Suspense>
           </div>
         </div>
         <div>
