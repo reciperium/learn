@@ -18,11 +18,11 @@ const recipriumTheme = createTheme({
 
 type Props = ReactCodeMirrorProps & {
   error?: WasmParserError | null;
-  recipe: string;
+  value: string;
   onChange: (value: string) => void;
 };
 
-export default function Editor({ error, recipe, onChange, className, ...props }: Props) {
+export default function Editor({ error, value: recipe, onChange, className, ...props }: Props) {
   return (
     <CodeMirror
       value={recipe}

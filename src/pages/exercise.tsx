@@ -72,7 +72,7 @@ export function Exercise({
               <Editor
                 error={error}
                 className="w-full h-full font-sans border rounded-sm bg-background"
-                recipe={recipe}
+                value={recipe}
                 onChange={(value: string) => {
                   setCurrentRecipe(value);
                 }}
