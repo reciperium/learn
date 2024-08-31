@@ -1,3 +1,9 @@
+## v0.5.3 (2024-08-31)
+
+### Fix
+
+- make editor more generic
+
 ## v0.5.2 (2024-08-31)
 
 ### Fix
