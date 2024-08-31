@@ -1,3 +1,13 @@
+## v0.4.0 (2024-08-31)
+
+### Feat
+
+- add counter and meta description
+
+### Fix
+
+- improve navbar
+
 ## v0.3.0 (2024-08-31)
 
 ### Feat
