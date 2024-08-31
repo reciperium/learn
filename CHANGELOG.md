@@ -1,3 +1,9 @@
+## v0.5.1 (2024-08-31)
+
+### Fix
+
+- tags are rendered if something is written
+
 ## v0.5.0 (2024-08-31)
 
 ### Feat
