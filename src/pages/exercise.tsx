@@ -24,13 +24,16 @@ export function Exercise({
   defaultRecipe,
   exerciseId,
 }: ExerciseProps) {
-  const [recipe, setCurrentRecipe] = useState(defaultRecipe);
+  const currentUrl = new URL(window.location.href);
+  const shareParam = currentUrl.searchParams.get("share");
+  const _defaultRecipe = shareParam ? atob(shareParam) : defaultRecipe;
+  const [recipe, setCurrentRecipe] = useState(_defaultRecipe);
   const [parsedRecipe, setParsedRecipe] = useState({} as Recipe);
   const [error, setError] = useState({} as WasmParserError | null);
 
   useEffect(() => {
-    setCurrentRecipe(defaultRecipe);
-  }, [defaultRecipe]);
+    setCurrentRecipe(_defaultRecipe);
+  }, [_defaultRecipe]);
 
   useEffect(() => {
     try {
