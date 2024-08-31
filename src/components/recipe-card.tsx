@@ -15,7 +15,8 @@ export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
     parsedRecipe.metadata
       ?.get("tags")
       ?.split(",")
-      .map((t) => t.trim()) || [];
+      .filter((v) => !!v) || [];
+
   return (
     <div className="relative rounded-md border bg-muted p-6 ">
       <div className="absolute top-0 right-0 pt-3 pr-3">
@@ -44,7 +45,9 @@ export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
                   <span>
                     {ref.quantity} {ref.unit}
                   </span>{" "}
-                  <RecipeRef baseUrl={BASE_URL} path={ref.name}>{ref.name}</RecipeRef>
+                  <RecipeRef baseUrl={BASE_URL} path={ref.name}>
+                    {ref.name}
+                  </RecipeRef>
                 </li>
               ))}
             </ul>
@@ -66,7 +69,7 @@ export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
       {parsedRecipe.tokens?.length > 0 && (
         <div className="recipe-content whitespace-pre text-wrap">
           <h2 className="text-lg font-semibold mb-2 ">Instructions</h2>
-          <Instructions tokens={parsedRecipe.tokens} baseUrl={BASE_URL}/>
+          <Instructions tokens={parsedRecipe.tokens} baseUrl={BASE_URL} />
         </div>
       )}
       <div className="flex flex-wrap gap-2 pt-12">
