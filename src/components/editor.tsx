@@ -22,10 +22,10 @@ type Props = ReactCodeMirrorProps & {
   onChange: (value: string) => void;
 };
 
-export default function Editor({ error, value: recipe, onChange, className, ...props }: Props) {
+export default function Editor({ error, value, onChange, className, ...props }: Props) {
   return (
     <CodeMirror
-      value={recipe}
+      value={value}
       onChange={onChange}
       theme={recipriumTheme}
       height="100%"
