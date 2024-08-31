@@ -1,3 +1,9 @@
+## v0.2.3 (2024-08-31)
+
+### Fix
+
+- rerender when changing task
+
 ## v0.2.2 (2024-08-30)
 
 ### Fix
