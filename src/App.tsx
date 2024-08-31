@@ -1,6 +1,7 @@
 import { Redirect, Route, Switch } from "wouter";
 import exercises from "./tasks";
-import { Exercise } from "./components/exercise";
+import { Exercise } from "./pages/exercise";
+import { End } from "./pages/end";
 import React from "react";
 
 export default function App() {
@@ -10,7 +11,7 @@ export default function App() {
         const exerciseId = idx + 1;
         return (
           <React.Fragment key={exerciseId}>
-            <Route path={`/${exerciseId}`} >
+            <Route path={`/task/${exerciseId}`}>
               <Exercise {...exercise} exerciseId={exerciseId} />
             </Route>
             {exercise.alias?.map((alias) => (
@@ -21,7 +22,10 @@ export default function App() {
           </React.Fragment>
         );
       })}
-      <Redirect to="/1" />
+      <Route path="/end">
+        <End />
+      </Route>
+      <Redirect to="/task/1" />
     </Switch>
   );
 }

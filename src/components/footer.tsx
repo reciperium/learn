@@ -19,7 +19,7 @@ export function Footer({ className, exerciseId }: Props): React.ReactNode {
       <span>
         {exerciseId > 1 && (
           <Link
-            href={`/${exerciseId - 1}`}
+            href={`/task/${exerciseId - 1}`}
             className={buttonVariants({ variant: "default" })}
           >
             Previous
@@ -27,12 +27,22 @@ export function Footer({ className, exerciseId }: Props): React.ReactNode {
         )}
       </span>
       <span>
-        {maxExercises !== exerciseId && (
+        {maxExercises !== exerciseId ? (
           <Link
-            href={`/${exerciseId + 1}`}
+            href={`/task/${exerciseId + 1}`}
             className={buttonVariants({ variant: "default" })}
           >
             Next
+          </Link>
+        ) : (
+          <Link
+            href={`/end`}
+            className={
+              buttonVariants({ variant: "outline" }) +
+              " text-green-600 dark:text-green-400"
+            }
+          >
+            Finish
           </Link>
         )}
       </span>

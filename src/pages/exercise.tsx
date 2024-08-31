@@ -3,11 +3,11 @@ import { Suspense, useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 import { CircleCheckBig, CirclePlus } from "lucide-react";
-import { MainNav } from "./main-nav";
-import { Footer } from "./footer";
-import Editor from "./editor";
-import RecipeCard from "./recipe-card";
-import Delayed from "./delayed";
+import { MainNav } from "../components/main-nav";
+import { Footer } from "../components/footer";
+import Editor from "../components/editor";
+import RecipeCard from "../components/recipe-card";
+import Delayed from "../components/delayed";
 
 type ExerciseProps = {
   title: string;
