@@ -18,7 +18,7 @@ export default function RecipeCard({ parsedRecipe, rawRecipe }: RecipeProps) {
       .filter((v) => !!v) || [];
 
   return (
-    <div className="relative rounded-md border bg-muted p-6 ">
+    <div className="relative rounded-md border border-slate-400 dark:border-slate-500 bg-muted p-6 shadow-lg dark:shadow-white/40 antialiased">
       <div className="absolute top-0 right-0 pt-3 pr-3">
         <ShareButton recipe={rawRecipe} />
       </div>
