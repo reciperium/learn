@@ -64,7 +64,7 @@ export function Exercise({
         </div>
       </div>
       <div className="flex flex-col-reverse md:flex-col">
-        <div className="h-1/2 md:h-1/3 min-h-64 border-b bg-cyan-50 dark:bg-cyan-800">
+        <div className="h-1/2 md:h-1/3 min-h-64 border-b dark:bg-slate-800">
           <div className="flex flex-col h-full items-center justify-center p-6 pt-0">
             <span className="text-sm py-1 text-secondary-foreground">
               editor
@@ -72,7 +72,7 @@ export function Exercise({
             <Suspense>
               <Editor
                 error={error}
-                className="w-full h-full font-sans border rounded-sm bg-background"
+                className="w-full h-full font-sans border rounded-md bg-background border-slate-300 shadow-inner dark:border-slate-600 dark:shadow-slate-600/50"
                 value={recipe}
                 onChange={(value: string) => {
                   setCurrentRecipe(value);
