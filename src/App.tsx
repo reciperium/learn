@@ -1,10 +1,16 @@
-import { Redirect, Route, Switch } from "wouter";
+import { Redirect, Route, Switch, useLocation } from "wouter";
 import exercises from "./tasks";
 import { Exercise } from "./pages/exercise";
 import { End } from "./pages/end";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function App() {
+  const [pathname] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <Switch>
       {exercises.map((exercise, idx) => {
