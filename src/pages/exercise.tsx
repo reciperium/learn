@@ -8,6 +8,7 @@ import { Footer } from "../components/footer";
 import Editor from "../components/editor";
 import RecipeCard from "../components/recipe-card";
 import Delayed from "../components/delayed";
+import { Link } from "wouter";
 
 type ExerciseProps = {
   title: string;
@@ -104,14 +105,12 @@ export function Exercise({
             validation(parsedRecipe) && (
               <div className="sticky md:absolute bottom-0 right-0 bg-gray-700 dark:bg-gray-100 animate-in fade-in duration-300">
                 <div className="flex items-center justify-center p-4 ">
-                  <div>
+                  <Link href={`/task/${exerciseId + 1}`} replace>
                     <span className="text-green-400 dark:text-green-600 flex flex-wrap gap-2 items-center">
                       Correct <CircleCheckBig size={16} />
                     </span>
-                    <span className="text-muted text-sm">
-                      Go to the next exercise!
-                    </span>
-                  </div>
+                    <span className="text-muted text-sm">Next exercise!</span>
+                  </Link>{" "}
                 </div>
               </div>
             )

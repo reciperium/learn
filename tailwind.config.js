@@ -54,6 +54,7 @@ module.exports = {
         },
         link: {
           DEFAULT: "hsl(var(--link))",
+          foreground: "hsl(var(--link-foreground))",
         },
       },
       borderRadius: {
