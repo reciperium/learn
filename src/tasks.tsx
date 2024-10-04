@@ -167,7 +167,7 @@ const exercises: ExerciseType[] = [
 
     **Task**
 
-    Add tags: At the beginning of the recipe, add \`>>\` followed by \`tags: \` and a space and a comma-separated list of tags.
+    Add tags: **At the beginning of the recipe**, add \`>>\` followed by \`tags: \` and a space and a comma-separated list of tags.
 
     **Example**
 
