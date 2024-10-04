@@ -1,3 +1,16 @@
+## v0.6.0 (2024-10-04)
+
+### Feat
+
+- **card**: add shadows and border color
+- add link to correct popup to the next section
+
+### Fix
+
+- **editor**: use rounded-md
+- scroll to top on route change
+- bump dependencies
+
 ## v0.5.4 (2024-08-31)
 
 ### Fix
