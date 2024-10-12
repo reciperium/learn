@@ -1,3 +1,10 @@
+## v0.6.1 (2024-10-12)
+
+### Fix
+
+- update default recipe on each task
+- update deps
+
 ## v0.6.0 (2024-10-04)
 
 ### Feat
