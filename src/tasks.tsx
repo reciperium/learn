@@ -50,9 +50,7 @@ const exercises: ExerciseType[] = [
     validation: (recipe: Recipe) => {
       return recipe.ingredients.find((v) => v.name === "flour") !== undefined;
     },
-    defaultRecipe: ind`Mix flour with water.
-      Cook in a pan.
-    `,
+    defaultRecipe: ind`Mix flour with water.`,
     title: "Your First Ingredient: A Tutorial",
   },
   {
@@ -81,9 +79,7 @@ const exercises: ExerciseType[] = [
         ) !== undefined
       );
     },
-    defaultRecipe: ind`Mix {flour} with {water}.
-      Cook in a pan.
-    `,
+    defaultRecipe: ind`Mix {flour} with {water}.`,
     title: "Adding Quantity and Units",
     alias: ["quantity-and-units"],
   },
@@ -158,7 +154,7 @@ const exercises: ExerciseType[] = [
       return recipe.recipes_refs.length > 0;
     },
     defaultRecipe: ind`Mix {flour}(125 gr) with woile/oat-milk.
-      Cook in a pan.
+      Cook in a &{pan} for t{1 minute}.
     `,
     title: "Adding Recipe References",
   },
@@ -189,7 +185,7 @@ const exercises: ExerciseType[] = [
     },
     title: "Adding Tags",
     defaultRecipe: ind`Mix {flour}(125 gr) with @{woile/oat-milk}.
-    Cook in a pan.
+      Cook in a &{pan} for t{1 minute}.
     `,
   },
 ];
