@@ -1,3 +1,11 @@
+## v0.7.0 (2026-02-18)
+
+### Feat
+
+- **npm**: bump deps
+- **flake**: bump lock
+- **ci**: add dependabot and update actions
+
 ## v0.6.1 (2024-10-12)
 
 ### Fix
