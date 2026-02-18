@@ -1,3 +1,10 @@
+## v0.8.0 (2026-02-18)
+
+### Feat
+
+- **npm**: bump more dependencies
+- **tailwind**: migrate to v4
+
 ## v0.7.0 (2026-02-18)
 
 ### Feat
