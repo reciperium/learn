@@ -1,3 +1,10 @@
+## v0.8.1 (2026-03-02)
+
+### Fix
+
+- bump dependencies
+- **dependabot**: add prefix for npm
+
 ## v0.8.0 (2026-02-18)
 
 ### Feat
