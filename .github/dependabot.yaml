@@ -9,7 +9,8 @@ updates:
       time: "06:00"
     cooldown:
       default-days: 7
-
+    commit-message:
+      prefix: "fix(npm)"
     # Group all npm updates into one PR
     groups:
       all-npm-dependencies:
