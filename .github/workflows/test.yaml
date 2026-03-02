@@ -1,4 +1,4 @@
-name: Build
+name: Test
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build and Release
+    name: Build attempt
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
